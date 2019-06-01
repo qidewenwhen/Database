@@ -1,5 +1,4 @@
 # Don't track content of these folders
-build/
 test/
 
 # Compiled source
@@ -26,4 +25,9 @@ test/
 ._*
 .Spotlight-V100
 .Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
 
