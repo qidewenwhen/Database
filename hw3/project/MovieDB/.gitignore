@@ -1,0 +1,29 @@
+# Don't track content of these folders
+build/
+test/
+
+# Compiled source
+*.class
+*.com
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.zip
+*.rar
+*.tar
+*.jar
+*.iso
+*.dmg
+*.7z
+*.gz
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
