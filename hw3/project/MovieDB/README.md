@@ -1,6 +1,3 @@
-- Author: Dewen Qi
-- ID: 00001549772
-
 - Description:
 This is a Java application which runs queries on the MovieLens/imdb data and extracts useful information. Using this application, the user will search for the movies from various categories that have the properties (attributes) the user is looking for.
 
