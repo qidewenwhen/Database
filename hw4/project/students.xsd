@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:include schemaLocation="buildings.xsd"></xs:include>
+
+<!-- 	<xs:element name="BuildingCode">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:length value="3" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element> -->
+
+	<xs:element name="SSN">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="\d{3}-\d{2}-\d{4}" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element> 
+
+	<xs:element name="Gender">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="M" />
+				<xs:enumeration value="F" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="Type">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Both" />
+				<xs:enumeration value="Master" />
+				<xs:enumeration value="Phd" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="Phone">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="10" />
+				<xs:maxLength value="14" />
+				<xs:pattern value="\d{3}[0-9|-]{7,11}" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="Student">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SSN" minOccurs="1" maxOccurs="1" />
+				<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="DOB" type="xs:date" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="Gender" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="Type" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="BuildingCode" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="Phone" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Students">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Student" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
